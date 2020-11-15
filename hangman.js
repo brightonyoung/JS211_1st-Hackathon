@@ -1,46 +1,8 @@
-const codeWord = 'coding';
-
-let board = [" ", " ", " ", " "," ", " "];
-
-
-console.log(board);
-
-
-function updateBoard(letter, index) {
-  board[index] = letter;
-}
-
-
-//takes in a letter, if any letter in word matches letter in input, call update board function and pass in letter and index. 
-function guess (letter) {
-  let success = false;
-  for (i=0; i < codeWord.length; i++) {
-    if (codeWord[i] === letter) {
-      updateBoard(letter, i)
-      success = true;
-    }
-  } 
-    if (success) {
-      console.log(`Success!...${board}`) 
-    } else {
-      console.log(`Letter is not in codeword : (...${board})`)
-    }
-}
-
-function CheckWin() {
-  if (!board.includes(' ')) {
-    console.log(`YOU WIN THE WORD WAS ${codeWord}!!!`)
-  }
-}
-
 console.log('hangman.js here...')
-const words = ['banana', 'apple', 'sumatra'];
-const randomWord = (arr) => {
-  let random = Math.floor(Math.random()*arr.length);
-  return arr[random];
-}
+
+
 //global variables
-const codeWord = randomWord(words);
+const codeWord = 'coding';
 const feedbackSection = document.querySelector('.feedback');
 const feedbackText = document.querySelector('.feedback__text');
 //target submit button
